@@ -1,0 +1,96 @@
+﻿@import '@/styles/variables'
+
+.counter 
+  display inline-flex 
+  justify-content center
+  align-items center
+  border-radius 50%
+  box-sizing border-box
+  border-color $white
+
+  &_8 
+    min-width 8px
+    height 8px
+    &_stroke 
+      border 1px solid
+
+  &_12 
+    min-width 12px
+    height 12px
+    &_stroke 
+      border 2px solid
+
+  &_16 
+    padding 0px 4px
+    min-width 16px
+    height 16px
+    font-size 11px
+    &_stroke 
+      border 2px solid
+
+  &_20 
+    padding 0px 4px
+    min-width 20px
+    height 20px
+    font-size 13px
+    &_stroke 
+      border 2px solid
+
+  &_24
+    padding 0px 6px
+    min-width 24px
+    height 24px
+    font-size 15px
+    &_stroke
+      border 3px solid
+
+  &_primary
+    background-color $green
+    color $white
+
+  &_secondary
+    background-color $brown
+    color $grey
+    border-color $white
+
+  &_pulse_primary 
+    position relative
+
+    &:before, &:after
+      content ""
+      position absolute
+      border-radius 50%
+      background-color $green
+      width 8px
+      height 8px
+      animation: red-dot-scale-fade 2s infinite
+
+    &:after
+      animation-delay 0.25s
+
+  &_pulse_secondary
+    position relative
+
+    &:before, &:after
+      content ""
+      position absolute
+      border-radius 50%
+      background-color $brown
+      width 8px
+      height 8px
+      animation: red-dot-scale-fade 2s infinite
+
+    &:after
+      animation-delay 0.25s
+
+
+@keyframes red-dot-scale-fade
+  0%
+    opacity 0.5
+    transform scale(1)
+  50%
+    opacity 0
+    transform scale(3)
+  100%
+    opacity 0
+    transform scale(3)
